@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Max Mustermann",
+    "image": "https://xsgames.co/randomusers/assets/avatars/male/68.jpg",
+    "team": "A Team",
+    "createdAt": "2024-06-01T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Jane King",
+    "image": "https://xsgames.co/randomusers/assets/avatars/female/1.jpg",
+    "team": "A Team",
+    "createdAt": "2024-06-01T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "name": "John Doe",
+    "image": "https://xsgames.co/randomusers/assets/avatars/male/26.jpg",
+    "team": "Team Awesome",
+    "createdAt": "2024-06-01T12:00:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Thomas Müller",
+    "image": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg",
+    "team": "A Team",
+    "createdAt": "2024-06-01T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Erika Kaiser",
+    "image": "https://xsgames.co/randomusers/assets/avatars/female/5.jpg",
+    "team": "A Team",
+    "createdAt": "2024-06-01T12:00:00Z"
+  },
+  {
+    "id": 6,
+    "name": "Jane Carpenter",
+    "image": "https://xsgames.co/randomusers/assets/avatars/female/10.jpg",
+    "team": "A Team",
+    "createdAt": "2024-06-01T12:00:00Z"
+  }
+]

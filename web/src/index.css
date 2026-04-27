@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+/**
+ * START --- SETUP TAILWINDCSS EDIT
+ *
+ * `yarn rw setup ui tailwindcss` placed these directives here
+ * to inject Tailwind's styles into your CSS.
+ * For more information, see: https://tailwindcss.com/docs/installation
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/**
+ * END --- SETUP TAILWINDCSS EDIT
+ */
+
+
+:root {
+  --color-pomelo: #96A53C;
+  --color-green-lizard: #A7F432;
+  --color-dark: #14080E;
+}
+
+html {
+  background: var(--color-pomelo);
+  background: linear-gradient(90deg, var(--color-pomelo) 0%, var(--color-green-lizard) 100%);
+  color: var(--color-dark);
+  font-family: "Host Grotesk", Verdana, sans-serif;
+}
+
+code {
+  font-family: "Fira Code", monospace;
+}
