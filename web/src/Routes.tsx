@@ -16,16 +16,16 @@ const Routes = () => {
   return (
     <Router>
       <Set wrap={ScaffoldLayout} title="TeamMembers" titleTo="teamMembers" buttonLabel="New TeamMember" buttonTo="newTeamMember">
-        <Route path="/team-members/new" page={TeamMemberNewTeamMemberPage} name="newTeamMember" />
+        <Route prerender path="/team-members/new" page={TeamMemberNewTeamMemberPage} name="newTeamMember" />
         <Route path="/team-members/{id:Int}/edit" page={TeamMemberEditTeamMemberPage} name="editTeamMember" />
         <Route path="/team-members/{id:Int}" page={TeamMemberTeamMemberPage} name="teamMember" />
-        <Route path="/team-members" page={TeamMemberTeamMembersPage} name="teamMembers" />
+        <Route prerender path="/team-members" page={TeamMemberTeamMembersPage} name="teamMembers" />
       </Set>
       <Set wrap={MainLayout}>
-        <Route path="/" page={HomePage} name="home" />
-        <Route path="/wochenplanung" page={WochenplanungPage} name="wochenplanung" />
-        <Route path="/presentations" page={PresentationsPage} name="presentations" />
-        <Route notfound page={NotFoundPage} />
+        <Route prerender path="/" page={HomePage} name="home" />
+        <Route prerender path="/wochenplanung" page={WochenplanungPage} name="wochenplanung" />
+        <Route prerender path="/presentations" page={PresentationsPage} name="presentations" />
+        <Route prerender notfound page={NotFoundPage} />
       </Set>
     </Router>
   );
