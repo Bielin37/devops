@@ -52,22 +52,14 @@ jobs:
       - name: Build app
         run: yarn rw build
 
-      - name: Show Postgres logs
-        run: docker logs $(docker ps -q --filter ancestor=postgres:16-bookworm)
+      - name: Create .env file
+        run: echo 'DATABASE_URL="postgresql://redwood:redwood@localhost:5432/redwood"' > .env
 
-      - name: List containers
-        run: docker ps
+      - name: Build app2
+        run: echo $DATABASE_URL
 
-      - name: List containers2
+      - name: Build app3
         run: ls -a
 
-      - name: Test DB connection
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y postgresql-client
-          psql postgresql://redwood:redwood@localhost:5432/redwood -c '\l'
-
       - name: Run tests
-        run: echo $DATABASE_URL & yarn rw test
-        env:
-          DATABASE_URL: postgresql://redwood:redwood@localhost:5432/redwood
+        run: yarn rw test
