@@ -9642,6 +9642,7 @@ __metadata:
   resolution: "api@workspace:api"
   dependencies:
     "@redwoodjs/api": "npm:8.9.0"
+    "@redwoodjs/api-server": "npm:8.9.0"
     "@redwoodjs/graphql-server": "npm:8.9.0"
   languageName: unknown
   linkType: soft
@@ -10429,8 +10430,8 @@ __metadata:
   linkType: hard
 
 "bare-stream@npm:^2.6.4":
-  version: 2.13.0
-  resolution: "bare-stream@npm:2.13.0"
+  version: 2.13.1
+  resolution: "bare-stream@npm:2.13.1"
   dependencies:
     streamx: "npm:^2.25.0"
     teex: "npm:^1.0.1"
@@ -10445,7 +10446,7 @@ __metadata:
       optional: true
     bare-events:
       optional: true
-  checksum: 10c0/3c81f169d3bda8af430c5cb0a1cf29f3f697f25fb0863941582112e588680fdfe28357083edcee4c099d3df5a7e3f4145ccc9552d9c7d9b5cab195644fff53d5
+  checksum: 10c0/2c35e0b4e56667265e9023e9f51b77652ce043fd6611497575871ce62e833760dd3e5919ccc0cebe1af40959c4350035162b47541a1277d6488709f61f199754
   languageName: node
   linkType: hard
 
@@ -10473,11 +10474,11 @@ __metadata:
   linkType: hard
 
 "baseline-browser-mapping@npm:^2.10.12":
-  version: 2.10.23
-  resolution: "baseline-browser-mapping@npm:2.10.23"
+  version: 2.10.24
+  resolution: "baseline-browser-mapping@npm:2.10.24"
   bin:
     baseline-browser-mapping: dist/cli.cjs
-  checksum: 10c0/b2c167b9b46dc1c0c6a2c2ccc24469910f22ca953fa591dcff7a222a69aa864b8172f3fdff851da00de307732752b87b1e23a0b4b416f024e5608facdbc461c4
+  checksum: 10c0/ae41f20b7d594909eac68e54b876127a456c99e85f49ba928a79c97ea288007617ad6638ddd1e36db45bbacef7b95b0f436d347602b2e1be2047099fcbbd5f37
   languageName: node
   linkType: hard
 
@@ -11627,7 +11628,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"confbox@npm:^0.2.2":
+"confbox@npm:^0.2.4":
   version: 0.2.4
   resolution: "confbox@npm:0.2.4"
   checksum: 10c0/4c36af33d9df7034300c452f7b289179264493bd0671fa81b995a0d70dc897b1d37f1af10d3ffb187f178d17ba1ed2ba167ed0f599ba3a139c271205dd553f73
@@ -13922,7 +13923,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"exsolve@npm:^1.0.7":
+"exsolve@npm:^1.0.8":
   version: 1.0.8
   resolution: "exsolve@npm:1.0.8"
   checksum: 10c0/65e44ae05bd4a4a5d87cfdbbd6b8f24389282cf9f85fa5feb17ca87ad3f354877e6af4cd99e02fc29044174891f82d1d68c77f69234410eb8f163530e6278c67
@@ -19655,13 +19656,13 @@ __metadata:
   linkType: hard
 
 "pkg-types@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "pkg-types@npm:2.3.0"
+  version: 2.3.1
+  resolution: "pkg-types@npm:2.3.1"
   dependencies:
-    confbox: "npm:^0.2.2"
-    exsolve: "npm:^1.0.7"
+    confbox: "npm:^0.2.4"
+    exsolve: "npm:^1.0.8"
     pathe: "npm:^2.0.3"
-  checksum: 10c0/d2bbddc5b81bd4741e1529c08ef4c5f1542bbdcf63498b73b8e1d84cff71806d1b8b1577800549bb569cb7aa20056257677b979bff48c97967cba7e64f72ae12
+  checksum: 10c0/dd9b20682426abaddcac9dc786aa22542e12df15a03dea2afa7bf54da0933358c6c7f545c0c3c1c7b24a2904ab4a451bf4e34a50c6837e458359eea30c257ed4
   languageName: node
   linkType: hard
 
@@ -24222,6 +24223,7 @@ __metadata:
     "@redwoodjs/router": "npm:8.9.0"
     "@redwoodjs/vite": "npm:8.9.0"
     "@redwoodjs/web": "npm:8.9.0"
+    "@redwoodjs/web-server": "npm:8.9.0"
     "@types/react": "npm:^18.2.55"
     "@types/react-dom": "npm:^18.2.19"
     autoprefixer: "npm:^10.4.20"
