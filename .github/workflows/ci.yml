@@ -58,6 +58,9 @@ jobs:
       - name: List containers
         run: docker ps
 
+      - name: List containers2
+        run: ls -a
+
       - name: Test DB connection
         run: |
           sudo apt-get update
