@@ -53,6 +53,6 @@ jobs:
         run: yarn rw build
 
       - name: Run tests
-        run: echo $DATABASE_URL yarn rw test
+        run: echo $DATABASE_URL & yarn rw test
         env:
           DATABASE_URL: postgresql://redwood:redwood@localhost:5432/redwood
