@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_URL: postgresql://redwood:redwood@localhost:5432/redwood
+
     services:
       postgres:
         image: postgres:16-bookworm
@@ -39,10 +42,6 @@ jobs:
 
       - name: Install deps
         run: yarn install
-
-      - name: Set DATABASE_URL
-        run: echo "DATABASE_URL=postgresql://redwood:redwood@localhost:5432/redwood" >> $GITHUB_ENV
-
 
       - name: Generate Prisma client
         run: yarn rw prisma generate
