@@ -9,8 +9,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
+    services:
+      postgres:
+        image: postgres:16-bookworm
+        env:
+          POSTGRES_USER: redwood
+          POSTGRES_PASSWORD: redwood
+          POSTGRES_DB: redwood
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U redwood"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
 
+    steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -26,13 +40,15 @@ jobs:
       - name: Install deps
         run: yarn install
 
+      - name: Set DATABASE_URL
+        run: echo "DATABASE_URL=postgresql://redwood:redwood@localhost:5432/redwood" >> $GITHUB_ENV
+
+
       - name: Generate Prisma client
         run: yarn rw prisma generate
 
       - name: Run migrations
-        run: yarn rw prisma migrate dev
-        env:
-          DATABASE_URL: file:./dev.db
+        run: yarn rw prisma migrate deploy
 
       - name: Build app
         run: yarn rw build
