@@ -9,9 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      DATABASE_URL: postgresql://redwood:redwood@localhost:5432/redwood
-
     services:
       postgres:
         image: postgres:16-bookworm
@@ -53,4 +50,6 @@ jobs:
         run: yarn rw build
 
       - name: Run tests
-        run: echo $DATABASE_URL & yarn rw test
+        run: yarn rw test
+        env:
+          DATABASE_URL: postgresql://redwood:redwood@localhost:5432/redwood
