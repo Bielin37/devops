@@ -9,9 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      DATABASE_URL: postgresql://redwood:redwood@localhost:5432/redwood
-
     services:
       postgres:
         image: postgres:16-bookworm
@@ -37,7 +34,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: 'yarn'
 
       - name: Install deps
@@ -60,3 +57,5 @@ jobs:
 
       - name: Run tests
         run: yarn rw test
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
