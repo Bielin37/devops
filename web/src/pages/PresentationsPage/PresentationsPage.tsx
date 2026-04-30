@@ -6,7 +6,7 @@ import AddPresentationModal, {
   PresentationFormData,
 } from 'src/components/AddPresentationModal/AddPresentationModal';
 
-import MEMBERS from '../../../../data/team.json';
+import MEMBERS from '../../../data/team.json';
 
 const PresentationsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

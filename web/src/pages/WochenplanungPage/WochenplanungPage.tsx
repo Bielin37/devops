@@ -1,6 +1,6 @@
 import { Metadata } from '@redwoodjs/web';
 
-import MEMBERS from '../../../../data/team.json';
+import MEMBERS from '../../../data/team.json';
 
 const WochenplanungPage = () => {
   return (

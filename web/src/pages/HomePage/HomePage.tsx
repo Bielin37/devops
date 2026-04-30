@@ -3,7 +3,7 @@ import { Metadata } from '@redwoodjs/web';
 
 import TeamMembersCell from 'src/components/TeamMember/TeamMembersCell';
 
-import MEMBERS from '../../../../data/team.json';
+import MEMBERS from '../../../data/team.json';
 
 const HomePage = () => {
   return (
