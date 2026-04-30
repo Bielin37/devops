@@ -49,12 +49,6 @@ jobs:
       - name: Build app
         run: yarn rw build
 
-      - name: Create .env file
-        run: echo 'DATABASE_URL=postgresql://redwood:redwood@localhost:5432/redwood' > .env.test
-
-      - name: Verify .env file
-        run: grep -r DATABASE_URL .
-
       - name: Run tests
         run: yarn rw test
         env:
