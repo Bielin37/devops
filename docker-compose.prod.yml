@@ -18,7 +18,7 @@ services:
   web:
     image: bielin37/redwood-web
     ports:
-      - '80:8910'
+      - '8080:8910'
     depends_on:
       - api
     environment:
