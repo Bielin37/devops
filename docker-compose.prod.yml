@@ -1,9 +1,6 @@
 services:
   api:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-      target: api_serve
+    image: bielin37/redwood-api
     # Without a command specified, the Dockerfile's api_serve CMD will be used.
     # If you are using a custom server file, you should either use the following
     # command to launch your server or update the Dockerfile to do so.
@@ -19,10 +16,7 @@ services:
       - SESSION_SECRET=super_secret_session_key_change_me_in_production_please
 
   web:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-      target: web_serve
+    image: bielin37/redwood-web
     ports:
       - '8910:8910'
     depends_on:
@@ -49,10 +43,7 @@ services:
   # ```
   console:
     user: root
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-      target: console
+    image: bielin37/redwood-console
     tmpfs:
       - /tmp
     command: 'true'

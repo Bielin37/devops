@@ -1,4 +1,4 @@
-import MEMBERS from '../../../../data/team.json';
+import MEMBERS from '../../../data/team.json';
 import TeamMember from '../TeamMember/TeamMember';
 
 const TeamMembers = () => {
