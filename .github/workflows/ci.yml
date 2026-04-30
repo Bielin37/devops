@@ -45,6 +45,8 @@ jobs:
 
       - name: Run migrations
         run: yarn rw prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Build app
         run: yarn rw build
