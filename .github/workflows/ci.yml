@@ -53,13 +53,7 @@ jobs:
         run: yarn rw build
 
       - name: Create .env file
-        run: echo 'DATABASE_URL="postgresql://redwood:redwood@localhost:5432/redwood"' > .env
-
-      - name: Build app2
-        run: echo $DATABASE_URL
-
-      - name: Build app3
-        run: cat .env
+        run: echo 'DATABASE_URL=postgresql://redwood:redwood@localhost:5432/redwood' > .env
 
       - name: Run tests
         run: yarn rw test
