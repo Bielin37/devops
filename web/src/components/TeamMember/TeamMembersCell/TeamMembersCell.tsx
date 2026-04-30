@@ -46,6 +46,5 @@ export const Failure = ({ error }: CellFailureProps<FindTeamMembers>) => (
 export const Success = ({
   teamMembers,
 }: CellSuccessProps<FindTeamMembers, FindTeamMembersVariables>) => {
-
   return <TeamMembers teamMembers={teamMembers} />;
 };

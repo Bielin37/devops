@@ -1,8 +1,8 @@
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redwoodjs/router';
 
 type MainLayoutProps = {
-  children?: React.ReactNode
-}
+  children?: React.ReactNode;
+};
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
@@ -62,7 +62,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;

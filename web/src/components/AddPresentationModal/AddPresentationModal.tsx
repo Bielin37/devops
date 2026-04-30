@@ -1,20 +1,20 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import { Dialog } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import { Dialog } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 type AddPresentationModalProps = {
-  isOpen: boolean
-  onClose: () => void
-  onSubmit: (data: PresentationFormData) => void
-}
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (data: PresentationFormData) => void;
+};
 
 export type PresentationFormData = {
-  title: string
-  subtitle?: string
-  date: string
-  presenter: string
-}
+  title: string;
+  subtitle?: string;
+  date: string;
+  presenter: string;
+};
 
 const AddPresentationModal = ({
   isOpen,
@@ -26,14 +26,14 @@ const AddPresentationModal = ({
     subtitle: '',
     date: '',
     presenter: '',
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    onSubmit(formData)
-    onClose()
-    setFormData({ title: '', subtitle: '', date: '', presenter: '' }) // Reset form
-  }
+    e.preventDefault();
+    onSubmit(formData);
+    onClose();
+    setFormData({ title: '', subtitle: '', date: '', presenter: '' }); // Reset form
+  };
 
   return (
     <Dialog open={isOpen} onClose={onClose} className="relative z-50">
@@ -151,7 +151,7 @@ const AddPresentationModal = ({
         </Dialog.Panel>
       </div>
     </Dialog>
-  )
-}
+  );
+};
 
-export default AddPresentationModal
+export default AddPresentationModal;

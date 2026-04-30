@@ -1,6 +1,6 @@
-import { render } from '@redwoodjs/testing/web'
+import { render } from '@redwoodjs/testing/web';
 
-import MainLayout from './MainLayout'
+import MainLayout from './MainLayout';
 
 //   Improve this test with help from the Redwood Testing Doc:
 //   https://redwoodjs.com/docs/testing#testing-pages-layouts
@@ -8,7 +8,7 @@ import MainLayout from './MainLayout'
 describe('MainLayout', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<MainLayout />)
-    }).not.toThrow()
-  })
-})
+      render(<MainLayout />);
+    }).not.toThrow();
+  });
+});
