@@ -49,6 +49,9 @@ jobs:
       - name: Build app
         run: yarn rw build
 
+      - name: Build app2
+        run: echo ${{ secrets.DATABASE_URL }}
+
       - name: Run tests
         run: yarn rw test
         env:
