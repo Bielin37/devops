@@ -1,6 +1,6 @@
-import { render } from '@redwoodjs/testing/web'
+import { render } from '@redwoodjs/testing/web';
 
-import TeamMembers from './TeamMembers'
+import TeamMembers from './TeamMembers';
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
@@ -8,7 +8,7 @@ import TeamMembers from './TeamMembers'
 describe('TeamMembers', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<TeamMembers />)
-    }).not.toThrow()
-  })
-})
+      render(<TeamMembers />);
+    }).not.toThrow();
+  });
+});

@@ -1,7 +1,7 @@
 // import { Link, routes } from '@redwoodjs/router'
 import { Metadata } from '@redwoodjs/web';
 
-import TeamMembers from 'src/components/TeamMembers/TeamMembers';
+import TeamMembersCell from 'src/components/TeamMember/TeamMembersCell';
 
 import MEMBERS from '../../../../data/team.json';
 
@@ -12,7 +12,7 @@ const HomePage = () => {
 
       <div className="lg:grid lg:grid-cols-3 lg:gap-8">
         <div className="lg:col-span-2">
-          <TeamMembers />
+          <TeamMembersCell />
         </div>
 
         <aside className="mt-8 lg:mt-0">

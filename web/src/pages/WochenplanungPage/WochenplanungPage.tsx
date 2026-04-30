@@ -1,6 +1,6 @@
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redwoodjs/web';
 
-import MEMBERS from '../../../../data/team.json'
+import MEMBERS from '../../../../data/team.json';
 
 const WochenplanungPage = () => {
   return (
@@ -112,7 +112,7 @@ const WochenplanungPage = () => {
       </h2>
       <p>...</p>
     </>
-  )
-}
+  );
+};
 
-export default WochenplanungPage
+export default WochenplanungPage;
