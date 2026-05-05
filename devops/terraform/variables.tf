@@ -6,7 +6,7 @@ variable "instance_type" {
   default = "t3.small"
 }
 
-variable "public_key_path" {
+variable "public_key" {
   description = "Path to SSH public key"
-  type        = string
+  type = string
 }

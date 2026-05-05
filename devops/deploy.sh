@@ -3,7 +3,8 @@
 set -e
 
 echo "🚀 Running Terraform..."
-terraform -chdir=terraform apply -auto-approve
+terraform -chdir=terraform apply \
+  -var="public_key=$(cat ~/.ssh/terraform_aws.pub)" -auto-approve
 
 echo "📡 Getting EC2 IP..."
 IP=$(terraform -chdir=terraform output -raw public_ip)

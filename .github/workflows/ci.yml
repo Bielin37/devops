@@ -81,6 +81,8 @@ jobs:
       - name: Terraform Apply
         working-directory: ./devops/terraform
         run: terraform apply -auto-approve
+        env:
+          TF_VAR_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
 
       - name: Get EC2 IP
         id: ip
