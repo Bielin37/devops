@@ -1,0 +1,46 @@
+- hosts: web
+  become: true
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Docker packages
+      apt:
+        name:
+          - docker.io
+          - docker-compose-plugin
+
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Add ubuntu to docker group
+      user:
+        name: ubuntu
+        groups: docker
+        append: yes
+
+    - name: Create app directory
+      file:
+        path: /home/ubuntu/app
+        state: directory
+
+    - name: Clone repository
+      git:
+        repo: https://github.com/Bielin37/devops.git
+        dest: /home/ubuntu/app
+        version: master
+
+    - name: Run containers
+      shell: docker compose -f ./docker-compose.prod.yml up -d
+      args:
+        chdir: /home/ubuntu/app
+
+    - name: Run containers
+      shell: docker compose exec -T api yarn rw prisma migrate deploy
+      args:
+        chdir: /home/ubuntu/app

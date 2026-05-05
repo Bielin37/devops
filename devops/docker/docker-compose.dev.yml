@@ -1,12 +1,12 @@
 services:
   redwood:
     build:
-      context: .
-      dockerfile: ./Dockerfile
+      context:  ../..
+      dockerfile: devops/docker/Dockerfile
       target: base
     command: yarn rw dev
     volumes:
-      - .:/home/node/app
+      - ../../:/home/node/app
       - node_modules:/home/node/app/node_modules
     ports:
       - '8910:8910'
@@ -41,8 +41,8 @@ services:
   console:
     user: root
     build:
-      context: .
-      dockerfile: ./Dockerfile
+      context:  ../..
+      dockerfile: devops/docker/Dockerfile
       target: console
     tmpfs:
       - /tmp
