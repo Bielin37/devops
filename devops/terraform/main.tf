@@ -88,11 +88,6 @@ data "aws_ami" "ubuntu" {
   }
 }
 
-resource "aws_key_pair" "deployer" {
-  key_name   = "redwood-key"
-  public_key = var.public_key
-}
-
 # ------------------------
 # EC2 Instance
 # ------------------------
@@ -103,7 +98,7 @@ resource "aws_instance" "app" {
 
   vpc_security_group_ids = [aws_security_group.app_sg.id]
 
-  key_name = aws_key_pair.deployer.key_name
+  key_name = "redwood-key"
 
   tags = {
     Name = "redwood-app"
