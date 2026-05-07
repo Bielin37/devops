@@ -102,8 +102,6 @@ jobs:
       - name: Run Ansible Playbook
         working-directory: ./devops/ansible
         run: |
-          pwd
-          ls -a
           ansible-playbook \
             -i "${{ steps.ip.outputs.ip }}," \
             -u ubuntu \
