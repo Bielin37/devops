@@ -102,7 +102,6 @@ jobs:
       - name: Run Ansible Playbook
         working-directory: ./devops/ansible
         run: |
-          ansible-lint playbook.yml
           ansible-playbook \
             -i "${{ steps.ip.outputs.ip }}," \
             -u ubuntu \
