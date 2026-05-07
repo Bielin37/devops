@@ -2,21 +2,23 @@
   become: true
 
   tasks:
-    - name: Update apt cache
-      apt:
-        update_cache: yes
-
     - name: Install Docker packages
       apt:
         name:
           - docker.io
-          - docker-compose-plugin
+          - docker-compose
+        state: present
+        update_cache: yes
 
     - name: Start Docker
       service:
         name: docker
         state: started
         enabled: true
+
+    - name: Verify Docker
+      command: docker --version
+      register: docker_version
 
     - name: Add ubuntu to docker group
       user:
@@ -36,7 +38,7 @@
         version: master
 
     - name: Run containers
-      shell: docker compose -f ./docker-compose.prod.yml up -d
+      shell: docker-compose -f ./docker-compose.prod.yml up -d
       args:
         chdir: /home/ubuntu/app
 
