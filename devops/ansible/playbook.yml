@@ -43,6 +43,6 @@
         chdir: /home/ubuntu/app
 
     - name: Run containers
-      shell: docker compose exec -T api yarn rw prisma migrate deploy
+      shell: docker exec app_api_1 yarn rw prisma migrate deploy
       args:
         chdir: /home/ubuntu/app
