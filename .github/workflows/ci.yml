@@ -102,11 +102,13 @@ jobs:
       - name: Run Ansible Playbook
         working-directory: ./devops/ansible
         run: |
+          pwd
+          ls -a
           ansible-playbook \
             -i "${{ steps.ip.outputs.ip }}," \
             -u ubuntu \
             --private-key ~/.ssh/id_rsa \
-            ansible/playbook.yml
+            playbook.yml
 
       - name: Show URL
         run: echo "App running at http://${{ steps.ip.outputs.ip }}"
