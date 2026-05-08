@@ -6,6 +6,7 @@ services:
     # command to launch your server or update the Dockerfile to do so.
     # This is important if you intend to configure GraphQL to use Realtime.
     # command: "./api/dist/server.js"
+    container_name: api
     ports:
       - '8911:8911'
     depends_on:
@@ -17,6 +18,7 @@ services:
 
   web:
     image: bielin37/redwood-web
+    container_name: web
     ports:
       - '80:8910'
     depends_on:
@@ -26,6 +28,7 @@ services:
 
   db:
     image: postgres:16-bookworm
+    container_name: db
     environment:
       POSTGRES_USER: redwood
       POSTGRES_PASSWORD: redwood

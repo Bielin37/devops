@@ -3,6 +3,7 @@
 FROM node:20-bookworm-slim as base
 
 RUN corepack enable
+RUN corepack prepare yarn@4.5.1 --activate
 
 # We tried to make the Dockerfile as lean as possible. In some cases, that means we excluded a dependency your project needs.
 # By far the most common is Python. If you're running into build errors because `python3` isn't available,
@@ -62,6 +63,7 @@ RUN yarn rw build web --no-prerender
 FROM node:20-bookworm-slim as api_serve
 
 RUN corepack enable
+RUN corepack prepare yarn@4.5.1 --activate
 
 RUN apt-get update && apt-get install -y \
   openssl \
@@ -90,6 +92,8 @@ COPY --chown=node:node --from=api_build /home/node/app/api/dist /home/node/app/a
 COPY --chown=node:node --from=api_build /home/node/app/api/db /home/node/app/api/db
 COPY --chown=node:node --from=api_build /home/node/app/node_modules/.prisma /home/node/app/node_modules/.prisma
 
+RUN yarn install
+
 ENV NODE_ENV=production
 
 # default api serve command
@@ -106,6 +110,7 @@ CMD [ "node_modules/.bin/rw-server", "api" ]
 FROM node:20-bookworm-slim as web_serve
 
 RUN corepack enable
+RUN corepack prepare yarn@4.5.1 --activate
 
 USER node
 WORKDIR /home/node/app
