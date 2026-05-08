@@ -32,6 +32,7 @@
         repo: https://github.com/Bielin37/devops.git
         dest: /home/ubuntu/app
         version: master
+        force: yes
 
     - name: Run containers
       shell: docker-compose -f ./docker-compose.prod.yml up -d
