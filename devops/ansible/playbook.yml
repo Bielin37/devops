@@ -32,11 +32,12 @@
         repo: https://github.com/Bielin37/devops.git
         dest: /home/ubuntu/app
         version: master
+        force: yes
 
     - name: Run containers
-      shell: docker-compose -f ./docker-compose.prod.yml up -d
+      shell: docker-compose -f ./devops/docker/docker-compose.prod.yml up -d
       args:
-        chdir: /home/ubuntu/app
+        chdir: /home/ubuntu/app/
 
     - name: Migrate Prisma
       shell: docker exec app_api_1 yarn rw prisma migrate deploy
