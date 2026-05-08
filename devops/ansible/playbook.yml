@@ -40,6 +40,6 @@
         chdir: /home/ubuntu/app/
 
     - name: Migrate Prisma
-      shell: docker exec app_api_1 yarn rw prisma migrate deploy
+      shell: docker exec -u 0 api yarn rw prisma migrate deploy
       args:
         chdir: /home/ubuntu/app
