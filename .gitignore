@@ -22,5 +22,9 @@ api/src/lib/generateGraphiQLHeader.*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+devops/terraform/terraform.tfstate
+devops/terraform/terraform.tfstate.backup
+devops/terraform/.terraform
+devops/terraform/.terraform.lock.hcl
 
 postgres
