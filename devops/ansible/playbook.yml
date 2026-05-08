@@ -16,10 +16,6 @@
         state: started
         enabled: true
 
-    - name: Verify Docker
-      command: docker --version
-      register: docker_version
-
     - name: Add ubuntu to docker group
       user:
         name: ubuntu
@@ -42,7 +38,7 @@
       args:
         chdir: /home/ubuntu/app
 
-    - name: Run containers
+    - name: Migrate Prisma
       shell: docker exec app_api_1 yarn rw prisma migrate deploy
       args:
         chdir: /home/ubuntu/app
